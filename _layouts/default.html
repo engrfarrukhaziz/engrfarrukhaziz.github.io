@@ -10,96 +10,90 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
     <style>
-      /* Custom professional styles */
+      /* Minimal, professional styling for intro page */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        background-color: #f9fafb;
-        color: #333;
-        margin: 0; padding: 0;
+        background-color: #f4f7fa;
+        color: #222;
+        margin: 0;
+        padding: 0;
       }
       .masthead {
-        background-color: #004080;
-        color: white;
-        padding: 1rem 2rem;
-        font-weight: 600;
-        font-size: 1.5rem;
-        letter-spacing: 1.2px;
+        background-color: #012a4a;
+        color: #ffffff;
         text-align: center;
+        padding: 1.8rem 1rem;
+        font-weight: 700;
+        font-size: 1.6rem;
+        letter-spacing: 1.3px;
       }
-      .site-cta {
-        text-align: center;
-        margin: 1.5rem 0;
-      }
-      .btn {
-        display: inline-block;
-        background-color: #007acc;
-        color: white;
-        padding: 0.75em 1.8em;
-        font-weight: 600;
-        font-size: 1.1rem;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      }
-      .btn:hover {
-        background-color: #005fa3;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      }
-      .content-wrapper {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 1rem 2rem 3rem;
+      main {
+        max-width: 700px;
+        margin: 3rem auto 5rem;
         background: white;
-        box-shadow: 0 0 15px rgba(0,0,0,0.05);
-        border-radius: 8px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
+        padding: 2.5rem 2rem;
+        text-align: center;
       }
-      h1, h2, h3 {
-        color: #004080;
-        margin-top: 1.5rem;
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1.8rem;
+        border: 3px solid #007acc;
+        box-shadow: 0 4px 10px rgba(0, 122, 204, 0.4);
       }
       h1 {
-        font-size: 2.2rem;
-        letter-spacing: 1.5px;
-        margin-bottom: 0.4rem;
+        font-size: 2.4rem;
+        color: #012a4a;
+        margin-bottom: 0.2rem;
       }
       h2 {
-        font-size: 1.6rem;
-        margin-top: 2rem;
+        font-weight: 400;
+        color: #005f99;
+        margin: 0 0 1.8rem 0;
+        font-size: 1.2rem;
+        letter-spacing: 0.6px;
       }
-      p.bio {
+      p.intro {
         font-size: 1.1rem;
-        color: #555;
-        margin-bottom: 2rem;
-        font-style: italic;
+        line-height: 1.55;
+        color: #333;
+        margin-bottom: 2.8rem;
+        padding: 0 1rem;
       }
-      .profile-links a {
-        margin: 0 1rem;
-        color: #007acc;
-        text-decoration: none;
+      .btn-primary {
+        background-color: #007acc;
+        color: white;
         font-weight: 600;
+        font-size: 1.15rem;
+        padding: 0.85em 2.4em;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgb(0 122 204 / 0.4);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        display: inline-block;
       }
-      .profile-links a:hover {
-        text-decoration: underline;
+      .btn-primary:hover {
+        background-color: #005f99;
+        box-shadow: 0 6px 20px rgb(0 95 153 / 0.6);
       }
       footer {
-        background-color: #004080;
-        color: white;
         text-align: center;
-        padding: 1rem 0.5rem;
-        font-size: 0.9rem;
-        margin-top: 3rem;
-        letter-spacing: 1px;
+        font-size: 0.85rem;
+        color: #777;
+        padding: 1rem 0;
+        letter-spacing: 1.2px;
       }
-      @media (max-width: 600px) {
-        .content-wrapper {
-          padding: 1rem;
-          margin: 1rem;
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
         }
-        .masthead {
-          font-size: 1.2rem;
-          padding: 1rem;
+        .profile-pic {
+          width: 120px;
+          height: 120px;
         }
       }
     </style>
@@ -108,65 +102,32 @@ layout: compress
   <body>
 
     {% include browser-upgrade.html %}
-    
+
     <header class="masthead">
-      Dr. Farrukh Aziz — PhD Researcher at Dalian University of Technology, China
+      Dr. Farrukh Aziz
     </header>
 
-    <div class="site-cta">
-      <a href="#research" class="btn">Explore My Research</a>
-      <a href="#publications" class="btn" style="background:#28a745; margin-left:1rem;">View Publications</a>
-    </div>
+    <main>
+      <img src="/assets/images/profile.jpg" alt="Dr. Farrukh Aziz" class="profile-pic" />
 
-    <main class="content-wrapper">
+      <h1>Dr. Farrukh Aziz</h1>
+      <h2>PhD Researcher | AI, Behavioral Science & Management Specialist</h2>
 
-      {{ content }}
+      <p class="intro">
+        Welcome! I am a dedicated researcher at Dalian University of Technology, China, focusing on pioneering interdisciplinary studies where artificial intelligence meets organizational behavior and strategic management.  
+        <br /><br />
+        My mission is to leverage cutting-edge AI to unlock new insights in leadership effectiveness, lean manufacturing, and financial risk, enabling smarter decision-making and sustainable growth for industries worldwide.
+      </p>
 
-      <section id="about-me">
-        <h1>About Me</h1>
-        <p class="bio">
-          I specialize in the intersection of Artificial Intelligence, behavioral sciences, and management. My research focuses on AI-driven decision-making, leadership impact on workplace behavior, lean manufacturing, and financial risk management. I aim to apply multidisciplinary approaches to solve real-world organizational and engineering challenges.
-        </p>
-      </section>
-
-      <section id="research">
-        <h2>Research Areas</h2>
-        <ul>
-          <li>AI-driven decision-making in organizations</li>
-          <li>Leadership and workplace behavior analysis</li>
-          <li>Lean manufacturing and process optimization</li>
-          <li>Financial risk management and strategic investment</li>
-        </ul>
-      </section>
-
-      <section id="publications">
-        <h2>Selected Publications</h2>
-        <ol>
-          <li><strong>How job stressors affect project-oriented OCB: An ego depletion perspective</strong> - F Aziz, FA Shah, HM Shah (2020)</li>
-          <li><strong>The Role of Artificial Intelligence in Driving ROI through Synergized HR, Marketing, and Financial Decision-Making</strong> - F Aziz et al. (2025)</li>
-          <li><strong>The Strategic Role of Bitcoin in Asset Allocation: Implications for Risk Management and Long-Term Investment Performance</strong> - A Haidar, F Aziz et al. (2025)</li>
-          <li><strong>Lean Assessment of Manufacturing Setup: Heavy Mechanical Complex Hydraulic Shop, Pakistan</strong> - FA Shah, A Ramzan, MF Aziz, F Aziz (2020)</li>
-          <li><strong>An Integrated Model for Forecasting Cotton Production in Pakistan up to 2050</strong> - FA Shah, F Aziz et al.</li>
-        </ol>
-      </section>
-
-      <section id="connect" style="margin-top: 2.5rem;">
-        <h2>Connect with Me</h2>
-        <p class="profile-links">
-          <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener">Google Scholar</a> |
-          <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener">ResearchGate</a> |
-          <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener">ORCID</a> |
-          <a href="mailto:engrfarrukhaziz@mail.dlut.edu.cn">Email Me</a>
-        </p>
-      </section>
-
+      <a href="/research" class="btn-primary" role="button" aria-label="Explore my research and publications">
+        Explore My Research & Publications
+      </a>
     </main>
 
     <footer>
-      © 2025 Dr. Farrukh Aziz — PhD Researcher at Dalian University of Technology | engfarrukhaziz@mail.dlut.edu.cn
+      &copy; 2025 Dr. Farrukh Aziz — <a href="mailto:engrfarrukhaziz@mail.dlut.edu.cn" style="color:#007acc; text-decoration:none;">engrfarrukhaziz@mail.dlut.edu.cn</a>
     </footer>
 
     {% include scripts.html %}
-
   </body>
 </html>
