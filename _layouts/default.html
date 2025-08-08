@@ -10,7 +10,6 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
     <style>
-      /* Basic page styling */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f4f7fa;
@@ -18,17 +17,15 @@ layout: compress
         margin: 0;
         padding: 0;
       }
-      /* Header bar */
       .masthead {
         background-color: #012a4a;
-        color: #fff;
+        color: #ffffff;
         text-align: center;
         padding: 1.8rem 1rem;
         font-weight: 700;
         font-size: 1.6rem;
         letter-spacing: 1.3px;
       }
-      /* Main container */
       main {
         max-width: 700px;
         margin: 3rem auto 5rem;
@@ -39,7 +36,6 @@ layout: compress
         text-align: center;
         position: relative;
       }
-      /* Profile picture styling */
       .profile-pic {
         width: 140px;
         height: 140px;
@@ -49,7 +45,6 @@ layout: compress
         border: 3px solid #007acc;
         box-shadow: 0 4px 10px rgba(0, 122, 204, 0.4);
       }
-      /* Name and subtitle */
       h1 {
         font-size: 2.4rem;
         color: #012a4a;
@@ -62,7 +57,6 @@ layout: compress
         font-size: 1.2rem;
         letter-spacing: 0.6px;
       }
-      /* Intro paragraph */
       p.intro {
         font-size: 1.1rem;
         line-height: 1.55;
@@ -70,7 +64,6 @@ layout: compress
         margin-bottom: 2.8rem;
         padding: 0 1rem;
       }
-      /* Primary button */
       .btn-primary {
         background-color: #007acc;
         color: white;
@@ -91,7 +84,6 @@ layout: compress
         box-shadow: 0 6px 20px rgb(0 95 153 / 0.6);
         outline: none;
       }
-      /* Dropdown menu hidden by default */
       .dropdown-links {
         margin-top: 1rem;
         text-align: left;
@@ -123,7 +115,6 @@ layout: compress
         border-bottom: 1px solid #007acc;
         outline: none;
       }
-      /* Footer */
       footer {
         text-align: center;
         font-size: 0.9rem;
@@ -150,7 +141,6 @@ layout: compress
         font-weight: 700;
         color: #222;
       }
-      /* Responsive */
       @media (max-width: 480px) {
         h1 {
           font-size: 2rem;
@@ -186,12 +176,10 @@ layout: compress
         My mission is to leverage cutting-edge AI to unlock new insights in leadership effectiveness, lean manufacturing, and financial risk, enabling smarter decision-making and sustainable growth for industries worldwide.
       </p>
 
-      <!-- Button toggles the dropdown -->
       <button class="btn-primary" id="researchToggleBtn" aria-expanded="false" aria-controls="researchLinks">
         Explore My Research & Publications
       </button>
 
-      <!-- Hidden dropdown menu -->
       <nav class="dropdown-links" id="researchLinks" aria-label="Research and profile links" role="region">
         <a href="/research-areas" target="_blank" rel="noopener noreferrer">Research Areas</a>
         <a href="/publications" target="_blank" rel="noopener noreferrer">Research Publications</a>
@@ -212,4 +200,28 @@ layout: compress
       <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile">
         🔬 ResearchGate
       </a> |
-      <a href="https://orcid.org/0000-0001-7088
+      <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">
+        🆔 ORCID
+      </a>
+      <br /><br />
+      &copy; 2025 Dr. Farrukh Aziz
+    </footer>
+
+    {% include scripts.html %}
+
+    <script>
+      const toggleBtn = document.getElementById('researchToggleBtn');
+      const linksMenu = document.getElementById('researchLinks');
+
+      toggleBtn.addEventListener('click', () => {
+        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', !isExpanded);
+        if (!isExpanded) {
+          linksMenu.style.display = 'block';
+        } else {
+          linksMenu.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>
