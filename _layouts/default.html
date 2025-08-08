@@ -10,7 +10,6 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
     <style>
-      /* Minimal, professional styling for intro page */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f4f7fa;
@@ -35,6 +34,7 @@ layout: compress
         box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
         padding: 2.5rem 2rem;
         text-align: center;
+        position: relative;
       }
       .profile-pic {
         width: 140px;
@@ -74,18 +74,72 @@ layout: compress
         text-decoration: none;
         box-shadow: 0 4px 14px rgb(0 122 204 / 0.4);
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        user-select: none;
         display: inline-block;
       }
-      .btn-primary:hover {
+      .btn-primary:hover,
+      .btn-primary:focus {
         background-color: #005f99;
         box-shadow: 0 6px 20px rgb(0 95 153 / 0.6);
+        outline: none;
+      }
+      .dropdown-links {
+        margin-top: 1rem;
+        text-align: left;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #e7f0fa;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgb(0 122 204 / 0.2);
+        display: none;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+      }
+      .dropdown-links a {
+        display: block;
+        color: #007acc;
+        font-weight: 600;
+        text-decoration: none;
+        margin-bottom: 0.6rem;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 4px;
+        transition: border-color 0.25s ease;
+      }
+      .dropdown-links a:last-child {
+        margin-bottom: 0;
+      }
+      .dropdown-links a:hover,
+      .dropdown-links a:focus {
+        border-bottom: 1px solid #007acc;
+        outline: none;
       }
       footer {
         text-align: center;
-        font-size: 0.85rem;
-        color: #777;
-        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #555;
+        padding: 2rem 1rem 1rem;
         letter-spacing: 1.2px;
+        border-top: 1px solid #ddd;
+        background: #fff;
+      }
+      footer a {
+        color: #007acc;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 0 0.5rem;
+      }
+      footer a:hover,
+      footer a:focus {
+        text-decoration: underline;
+        outline: none;
+      }
+      footer .contact-email {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        color: #222;
       }
       @media (max-width: 480px) {
         h1 {
@@ -94,6 +148,10 @@ layout: compress
         .profile-pic {
           width: 120px;
           height: 120px;
+        }
+        .dropdown-links {
+          max-width: 100%;
+          padding: 1rem;
         }
       }
     </style>
@@ -114,20 +172,56 @@ layout: compress
       <h2>PhD Researcher | AI, Behavioral Science & Management Specialist</h2>
 
       <p class="intro">
-        Welcome! I am a dedicated researcher at Dalian University of Technology, China, focusing on pioneering interdisciplinary studies where artificial intelligence meets organizational behavior and strategic management.  
-        <br /><br />
+        Welcome! I am a dedicated researcher at Dalian University of Technology, China, focusing on pioneering interdisciplinary studies where artificial intelligence meets organizational behavior and strategic management.<br /><br />
         My mission is to leverage cutting-edge AI to unlock new insights in leadership effectiveness, lean manufacturing, and financial risk, enabling smarter decision-making and sustainable growth for industries worldwide.
       </p>
 
-      <a href="/research" class="btn-primary" role="button" aria-label="Explore my research and publications">
+      <button class="btn-primary" id="researchToggleBtn" aria-expanded="false" aria-controls="researchLinks">
         Explore My Research & Publications
-      </a>
+      </button>
+
+      <nav class="dropdown-links" id="researchLinks" aria-label="Research and profile links" role="region">
+        <a href="/research-areas" target="_blank" rel="noopener noreferrer">Research Areas</a>
+        <a href="/publications" target="_blank" rel="noopener noreferrer">Research Publications</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+        <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer">ORCID Profile</a>
+      </nav>
     </main>
 
     <footer>
-      &copy; 2025 Dr. Farrukh Aziz — <a href="mailto:engrfarrukhaziz@mail.dlut.edu.cn" style="color:#007acc; text-decoration:none;">engrfarrukhaziz@mail.dlut.edu.cn</a>
+      <span class="contact-email">engrfarrukhaziz@mail.dlut.edu.cn</span>
+      <a href="mailto:engrfarrukhaziz@mail.dlut.edu.cn" aria-label="Send email to Dr. Farrukh Aziz">
+        📧 Email
+      </a> |
+      <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+        📚 Scholar
+      </a> |
+      <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile">
+        🔬 ResearchGate
+      </a> |
+      <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">
+        🆔 ORCID
+      </a>
+      <br /><br />
+      &copy; 2025 Dr. Farrukh Aziz
     </footer>
 
     {% include scripts.html %}
+
+    <script>
+      const toggleBtn = document.getElementById('researchToggleBtn');
+      const linksMenu = document.getElementById('researchLinks');
+
+      toggleBtn.addEventListener('click', () => {
+        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', !isExpanded);
+        if (!isExpanded) {
+          linksMenu.style.display = 'block';
+        } else {
+          linksMenu.style.display = 'none';
+        }
+      });
+    </script>
   </body>
 </html>
