@@ -1,152 +1,228 @@
-<...> 
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7fa;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
-    .masthead {
-      background-color: #012a4a;
-      color: #fff;
-      text-align: center;
-      padding: 1.8rem 1rem;
-      font-weight: 700;
-      font-size: 1.6rem;
-      letter-spacing: 1.3px;
-    }
-    main {
-      width: 100%;
-      max-width: 960px;
-      margin: 3rem auto 5rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      position: relative;
-    }
-    .profile-pic {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 1.8rem;
-      border: 3px solid #007acc;
-      box-shadow: 0 4px 10px rgba(0, 122, 204, 0.4);
-    }
-    h1 {
-      font-size: 2.4rem;
-      color: #012a4a;
-      margin-bottom: 0.2rem;
-    }
-    h2 {
-      font-weight: 400;
-      color: #005f99;
-      margin: 0 0 1.8rem 0;
-      font-size: 1.2rem;
-      letter-spacing: 0.6px;
-    }
-    p.intro {
-      font-size: 1.1rem;
-      line-height: 1.55;
-      color: #333;
-      margin-bottom: 2.8rem;
-      padding: 0 1rem;
-    }
-    .btn-primary {
-      background-color: #007acc;
-      color: white;
-      font-weight: 600;
-      font-size: 1.15rem;
-      padding: 0.85em 2.4em;
-      border-radius: 8px;
-      text-decoration: none;
-      box-shadow: 0 4px 14px rgb(0 122 204 / 0.4);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-      display: inline-block;
-    }
-    .btn-primary:hover,
-    .btn-primary:focus {
-      background-color: #005f99;
-      box-shadow: 0 6px 20px rgb(0 95 153 / 0.6);
-      outline: none;
-    }
-    .dropdown-links {
-      margin-top: 1rem;
-      text-align: left;
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-      background: #e7f0fa;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgb(0 122 204 / 0.2);
-      display: none;
-      padding: 1rem 1.5rem;
-      font-size: 1rem;
-    }
-    .dropdown-links a {
-      display: block;
-      color: #007acc;
-      font-weight: 600;
-      text-decoration: none;
-      margin-bottom: 0.6rem;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 4px;
-      transition: border-color 0.25s ease;
-    }
-    .dropdown-links a:last-child {
-      margin-bottom: 0;
-    }
-    .dropdown-links a:hover,
-    .dropdown-links a:focus {
-      border-bottom: 1px solid #007acc;
-      outline: none;
-    }
-    footer {
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      padding: 2rem 2rem 1rem;
-      letter-spacing: 1.2px;
-      border-top: 1px solid #ddd;
-      background: #fff;
-    }
-    footer a {
-      color: #007acc;
-      text-decoration: none;
-      font-weight: 600;
-      margin: 0 0.5rem;
-    }
-    footer a:hover,
-    footer a:focus {
-      text-decoration: underline;
-      outline: none;
-    }
-    footer .contact-email {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      color: #222;
-    }
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7fa;
+        color: #222;
+        margin: 0;
+        padding: 0;
       }
+      .masthead {
+        background-color: #012a4a;
+        color: #fff;
+        text-align: center;
+        padding: 1.8rem 1rem;
+        font-weight: 700;
+        font-size: 1.6rem;
+        letter-spacing: 1.3px;
+      }
+      main {
+  width: 100%;
+  max-width: 960px; /* or any width you prefer */
+  margin: 3rem auto 5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+}
       .profile-pic {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1.8rem;
+        border: 3px solid #007acc;
+        box-shadow: 0 4px 10px rgba(0, 122, 204, 0.4);
+      }
+      h1 {
+        font-size: 2.4rem;
+        color: #012a4a;
+        margin-bottom: 0.2rem;
+      }
+      h2 {
+        font-weight: 400;
+        color: #005f99;
+        margin: 0 0 1.8rem 0;
+        font-size: 1.2rem;
+        letter-spacing: 0.6px;
+      }
+      p.intro {
+        font-size: 1.1rem;
+        line-height: 1.55;
+        color: #333;
+        margin-bottom: 2.8rem;
+        padding: 0 1rem;
+      }
+      .btn-primary {
+        background-color: #007acc;
+        color: white;
+        font-weight: 600;
+        font-size: 1.15rem;
+        padding: 0.85em 2.4em;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgb(0 122 204 / 0.4);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        user-select: none;
+        display: inline-block;
+      }
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #005f99;
+        box-shadow: 0 6px 20px rgb(0 95 153 / 0.6);
+        outline: none;
       }
       .dropdown-links {
-        max-width: 100%;
-        padding: 1rem;
+        margin-top: 1rem;
+        text-align: left;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #e7f0fa;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgb(0 122 204 / 0.2);
+        display: none;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
       }
-    }
-  </style>
-<...>
+      .dropdown-links a {
+        display: block;
+        color: #007acc;
+        font-weight: 600;
+        text-decoration: none;
+        margin-bottom: 0.6rem;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 4px;
+        transition: border-color 0.25s ease;
+      }
+      .dropdown-links a:last-child {
+        margin-bottom: 0;
+      }
+      .dropdown-links a:hover,
+      .dropdown-links a:focus {
+        border-bottom: 1px solid #007acc;
+        outline: none;
+      }
+      footer {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #555;
+        padding: 2rem 1rem 1rem;
+        letter-spacing: 1.2px;
+        border-top: 1px solid #ddd;
+        background: #fff;
+      }
+      footer a {
+        color: #007acc;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 0 0.5rem;
+      }
+      footer a:hover,
+      footer a:focus {
+        text-decoration: underline;
+        outline: none;
+      }
+      footer .contact-email {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        color: #222;
+      }
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+        }
+        .profile-pic {
+          width: 120px;
+          height: 120px;
+        }
+        .dropdown-links {
+          max-width: 100%;
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    {% include browser-upgrade.html %}
+
+    <header class="masthead">
+      Dr. Farrukh Aziz
+    </header>
+
+    <main>
+      <img src="/assets/images/profile.jpg" alt="Dr. Farrukh Aziz" class="profile-pic" />
+
+      <h1>Dr. Farrukh Aziz</h1>
+      <h2>PhD Researcher | AI, Behavioral Science & Management Specialist</h2>
+
+      <p class="intro">
+        Welcome! I am a dedicated researcher at Dalian University of Technology, China, focusing on pioneering interdisciplinary studies where artificial intelligence meets organizational behavior and strategic management.<br /><br />
+        My mission is to leverage cutting-edge AI to unlock new insights in leadership effectiveness, lean manufacturing, and financial risk, enabling smarter decision-making and sustainable growth for industries worldwide.
+      </p>
+
+      <button class="btn-primary" id="researchToggleBtn" aria-expanded="false" aria-controls="researchLinks">
+        Explore My Research & Publications
+      </button>
+
+      <nav class="dropdown-links" id="researchLinks" aria-label="Research and profile links" role="region">
+        <a href="/research-areas" target="_blank" rel="noopener noreferrer">Research Areas</a>
+        <a href="/publications" rel="noopener noreferrer">Research Publications</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+        <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer">ORCID Profile</a>
+      </nav>
+    </main>
+
+    <footer>
+      <span class="contact-email">engrfarrukhaziz@mail.dlut.edu.cn</span>
+      <a href="mailto:engrfarrukhaziz@mail.dlut.edu.cn" aria-label="Send email to Dr. Farrukh Aziz">
+        📧 Email
+      </a> |
+      <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+        📚 Scholar
+      </a> |
+      <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile">
+        🔬 ResearchGate
+      </a> |
+      <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">
+        🆔 ORCID
+      </a>
+      <br /><br />
+      &copy; 2025 Dr. Farrukh Aziz
+    </footer>
+
+    {% include scripts.html %}
+
+    <script>
+      const toggleBtn = document.getElementById('researchToggleBtn');
+      const linksMenu = document.getElementById('researchLinks');
+
+      toggleBtn.addEventListener('click', () => {
+        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', !isExpanded);
+        if (!isExpanded) {
+          linksMenu.style.display = 'block';
+        } else {
+          linksMenu.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>
