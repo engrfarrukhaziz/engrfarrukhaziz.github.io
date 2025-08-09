@@ -9,15 +9,6 @@ permalink: /publications/
 <h1>Research Publications</h1>
 
 <article>
-  <h2>The Role of Incentive-Based Compensation in Enhancing Sales Team Motivation, Brand Expansion, and Profitability</h2>
-  <div class="authors-journal">
-    F Aziz, R.A Khoso, S Hussain, M Ashfaque<br />
-    Research Journal for Social Affairs, 3(5), 529-539, 2025<br />
-    <a href="https://doi.org/10.71317/RJSA.003.05.0347" target="_blank" rel="noopener noreferrer">https://doi.org/10.71317/RJSA.003.05.0347</a>
-  </div>
-</article>
-
-<article>
   <h2>How job stressors affect project-oriented OCB: An ego depletion perspective</h2>
   <div class="authors-journal">
     F Aziz, FA Shah, HM Shah<br />
@@ -56,6 +47,15 @@ permalink: /publications/
 </article>
 
 <article>
+  <h2>The Role of Incentive-Based Compensation in Enhancing Sales Team Motivation, Brand Expansion, and Profitability</h2>
+  <div class="authors-journal">
+    FAziz, R.A Khoso, S Hussain, M Ashfaque<br />
+    Research Journal for Social Affairs, 3(5), 529-539, 2025
+  </div>
+  <a href="https://doi.org/10.71317/RJSA.003.05.0347" target="_blank" class="btn-link" rel="noopener noreferrer">DOI</a>
+</article>
+
+<article>
   <h2>An Integrated Model for Forecasting Cotton Production, Domestic Consumption, Growth Rate, Area Harvested, Exports and Imports in Pakistan Up to 2050</h2>
   <div class="authors-journal">
     FA Shah, F Aziz, AH Shah, AL Hashmi<br />
@@ -64,13 +64,6 @@ permalink: /publications/
   <a href="https://www.researchgate.net/publication/394407274_AN_INTEGRATED_MODEL_FOR_FORECASTING_COTTON_PRODUCTION_DOMESTIC_CONSUMPTION_GROWTH_RATE_AREA_HARVESTED_EXPORTS_AND_IMPORTS_IN_PAKISTAN_UP_TO_2050" target="_blank" class="btn-link" rel="noopener noreferrer">Download</a>
 </article>
 
-<article>
-  <h2>Influence of glass fibers on mechanical properties of self-compacted concrete</h2>
-  <div class="authors-journal">
-    F Aziz<br />
-    UET Lahore, 2018
-  </div>
-</article>
 
 <style>
   body {
@@ -114,7 +107,6 @@ permalink: /publications/
     display: inline-block;
     padding: 0.5em 1.2em;
     margin-top: 0.2rem;
-    margin-right: 0.5rem;
     background-color: #007acc;
     color: white;
     font-weight: 600;
