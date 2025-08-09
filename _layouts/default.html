@@ -10,7 +10,7 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
     <style>
-      /* Base body and masthead */
+      /* Reset and base */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f4f7fa;
@@ -26,38 +26,46 @@ layout: compress
         font-weight: 700;
         font-size: 1.6rem;
         letter-spacing: 1.3px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
       }
 
-      /* Main container: flex layout */
+      /* Page container: flex with main content and right sidebar */
       main {
+        display: flex;
         max-width: 1100px;
         margin: 3rem auto 5rem;
         background: white;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
         padding: 2.5rem 2rem;
-        display: flex;
         gap: 3rem;
-        text-align: left;
+        box-sizing: border-box;
+        /* Prevent main from shrinking too much */
+        min-width: 320px;
       }
 
-      /* Left content area */
+      /* Content section */
       main > .content {
         flex: 2 1 0;
-        min-width: 0; /* fix flexbox text overflow */
+        min-width: 0; /* for text overflow handling */
       }
 
-      /* Sidebar styles */
+      /* Sidebar on the right */
       main > .sidebar {
-        flex: 1 1 280px; /* fixed min width for sidebar */
+        flex: 1 1 280px;
+        max-width: 320px;
         background: #e7f0fa;
         border-radius: 12px;
         padding: 1.5rem 2rem;
         box-shadow: 0 4px 12px rgb(0 122 204 / 0.2);
-        max-height: 720px;
+        max-height: calc(100vh - 10rem); /* Keep sidebar height within viewport minus header/footer */
         overflow-y: auto;
         font-size: 0.9rem;
         line-height: 1.4;
+        position: sticky;
+        top: 6.5rem; /* below masthead height + margin */
       }
       .sidebar h3 {
         color: #012a4a;
@@ -89,7 +97,7 @@ layout: compress
         outline: none;
       }
 
-      /* Profile pic and headings */
+      /* Profile picture and headings */
       .profile-pic {
         width: 140px;
         height: 140px;
@@ -201,16 +209,23 @@ layout: compress
         color: #222;
       }
 
-      /* Responsive tweaks */
+      /* Responsive - stack content and sidebar vertically on small screens */
       @media (max-width: 720px) {
         main {
           flex-direction: column;
           max-width: 95%;
+          padding: 1.5rem 1rem;
+          margin: 2rem auto 3rem;
         }
         main > .sidebar {
           max-height: none;
+          position: relative;
+          top: auto;
           margin-top: 2rem;
-          padding: 1.2rem 1rem;
+          padding: 1rem 1rem;
+          max-width: 100%;
+          box-shadow: none;
+          border-radius: 8px;
         }
         h1 {
           font-size: 2rem;
@@ -313,34 +328,4 @@ layout: compress
       <a href="mailto:engrfarrukhaziz@mail.dlut.edu.cn" aria-label="Send email to Dr. Farrukh Aziz">
         📧 Email
       </a> |
-      <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
-        📚 Scholar
-      </a> |
-      <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile">
-        🔬 ResearchGate
-      </a> |
-      <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">
-        🆔 ORCID
-      </a>
-      <br /><br />
-      &copy; 2025 Dr. Farrukh Aziz
-    </footer>
-
-    {% include scripts.html %}
-
-    <script>
-      const toggleBtn = document.getElementById('researchToggleBtn');
-      const linksMenu = document.getElementById('researchLinks');
-
-      toggleBtn.addEventListener('click', () => {
-        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-        toggleBtn.setAttribute('aria-expanded', !isExpanded);
-        if (!isExpanded) {
-          linksMenu.style.display = 'block';
-        } else {
-          linksMenu.style.display = 'none';
-        }
-      });
-    </script>
-  </body>
-</html>
+      <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9
