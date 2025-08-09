@@ -27,12 +27,13 @@ layout: compress
       letter-spacing: 1.3px;
     }
     main {
-      max-width: 900px;
+      max-width: 700px;
       margin: 3rem auto 5rem;
       background: white;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
       padding: 2.5rem 2rem;
+      text-align: center;
       position: relative;
     }
     .profile-pic {
@@ -48,7 +49,6 @@ layout: compress
       font-size: 2.4rem;
       color: #012a4a;
       margin-bottom: 0.2rem;
-      text-align: center;
     }
     h2 {
       font-weight: 400;
@@ -56,7 +56,6 @@ layout: compress
       margin: 0 0 1.8rem 0;
       font-size: 1.2rem;
       letter-spacing: 0.6px;
-      text-align: center;
     }
     p.intro {
       font-size: 1.1rem;
@@ -64,7 +63,6 @@ layout: compress
       color: #333;
       margin-bottom: 2.8rem;
       padding: 0 1rem;
-      text-align: center;
     }
     .btn-primary {
       background-color: #007acc;
@@ -80,9 +78,42 @@ layout: compress
       user-select: none;
       display: inline-block;
     }
-    .btn-primary:hover {
+    .btn-primary:hover,
+    .btn-primary:focus {
       background-color: #005f99;
       box-shadow: 0 6px 20px rgb(0 95 153 / 0.6);
+      outline: none;
+    }
+    .dropdown-links {
+      margin-top: 1rem;
+      text-align: left;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #e7f0fa;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 122 204 / 0.2);
+      display: none;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+    }
+    .dropdown-links a {
+      display: block;
+      color: #007acc;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+      transition: border-color 0.25s ease;
+    }
+    .dropdown-links a:last-child {
+      margin-bottom: 0;
+    }
+    .dropdown-links a:hover,
+    .dropdown-links a:focus {
+      border-bottom: 1px solid #007acc;
+      outline: none;
     }
     footer {
       text-align: center;
@@ -99,19 +130,26 @@ layout: compress
       font-weight: 600;
       margin: 0 0.5rem;
     }
-    footer a:hover {
+    footer a:hover,
+    footer a:focus {
       text-decoration: underline;
+      outline: none;
+    }
+    footer .contact-email {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      color: #222;
     }
     .publications-section {
-      margin-top: 4rem;
-      text-align: left;
-    }
-    .publications-section h2 {
-      text-align: left;
-      color: #012a4a;
+      margin-top: 2rem;
+      background: #fdfdfd;
+      border-radius: 8px;
+      padding: 1.5rem;
     }
   </style>
 </head>
+
 <body>
 
   {% include browser-upgrade.html %}
@@ -127,15 +165,23 @@ layout: compress
     <h2>PhD Researcher | AI, Behavioral Science & Management Specialist</h2>
 
     <p class="intro">
-      Welcome! I am a dedicated researcher at Dalian University of Technology, China, focusing on pioneering interdisciplinary studies where artificial intelligence meets organizational behavior and strategic management.<br><br>
+      Welcome! I am a dedicated researcher at Dalian University of Technology, China, focusing on pioneering interdisciplinary studies where artificial intelligence meets organizational behavior and strategic management.<br /><br />
       My mission is to leverage cutting-edge AI to unlock new insights in leadership effectiveness, lean manufacturing, and financial risk, enabling smarter decision-making and sustainable growth for industries worldwide.
     </p>
 
-    <a href="#publications" class="btn-primary">
+    <button class="btn-primary" id="researchToggleBtn" aria-expanded="false" aria-controls="researchLinks">
       Explore My Research & Publications
-    </a>
+    </button>
 
-    <!-- Embedded Publications Section -->
+    <nav class="dropdown-links" id="researchLinks" aria-label="Research and profile links" role="region">
+      <a href="/research-areas" target="_blank" rel="noopener noreferrer">Research Areas</a>
+      <a href="#publications" rel="noopener noreferrer">Research Publications</a>
+      <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+      <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer">ORCID Profile</a>
+    </nav>
+
+    <!-- Merged Publications Content -->
     <div id="publications" class="publications-section">
       <h2>Publications</h2>
       {% if site.author.googlescholar %}
@@ -154,7 +200,7 @@ layout: compress
               {% continue %}
             {% endif %}
             {% unless title_shown %}
-              <h3>{{ category[1].title }}</h3><hr>
+              <h3>{{ category[1].title }}</h3><hr />
               {% assign title_shown = true %}
             {% endunless %}
             {% include archive-single.html %}
@@ -166,20 +212,37 @@ layout: compress
         {% endfor %}
       {% endif %}
     </div>
-
   </main>
 
   <footer>
     <span class="contact-email">engrfarrukhaziz@mail.dlut.edu.cn</span>
-    <a href="mailto:engrfarrukhaziz@mail.dlut.edu.cn">📧 Email</a> |
-    <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank">📚 Scholar</a> |
-    <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank">🔬 ResearchGate</a> |
-    <a href="https://orcid.org/0000-0001-7088-0371" target="_blank">🆔 ORCID</a>
-    <br><br>
+    <a href="mailto:engrfarrukhaziz@mail.dlut.edu.cn" aria-label="Send email to Dr. Farrukh Aziz">
+      📧 Email
+    </a> |
+    <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+      📚 Scholar
+    </a> |
+    <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile">
+      🔬 ResearchGate
+    </a> |
+    <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">
+      🆔 ORCID
+    </a>
+    <br /><br />
     &copy; 2025 Dr. Farrukh Aziz
   </footer>
 
   {% include scripts.html %}
 
+  <script>
+    const toggleBtn = document.getElementById('researchToggleBtn');
+    const linksMenu = document.getElementById('researchLinks');
+
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', !isExpanded);
+      linksMenu.style.display = isExpanded ? 'none' : 'block';
+    });
+  </script>
 </body>
 </html>
