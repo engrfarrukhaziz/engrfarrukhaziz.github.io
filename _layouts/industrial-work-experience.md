@@ -19,7 +19,7 @@ permalink: /industrial-work-experience/
 <!-- Experience content -->
 <section style="max-width:1500px; margin:0 auto 3rem; padding:1rem 1.5rem; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#222; background:#f4f7fa; border-radius:12px; box-shadow:0 10px 30px rgb(0 0 0 / 0.1);">
 
-  <p style="font-weight:700; font-size:1.2rem; margin-bottom:2rem;">EXPERIENCE (6 YEARS)</p>
+  <p style="font-weight:700; font-size:1.2rem; margin-bottom:2rem;">EXPERIENCE (2.8 YEARS)</p>
 
   <article style="margin-bottom: 2.5rem;">
     <h2 style="color:#005f99; font-weight:700; margin-bottom:0.3rem;">I. From 1<sup>st</sup> SEP 2018 to 30<sup>th</sup> AUG 2019</h2>
