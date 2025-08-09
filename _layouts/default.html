@@ -10,7 +10,6 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
     <style>
-      /* Base body and masthead */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f4f7fa;
@@ -26,77 +25,17 @@ layout: compress
         font-weight: 700;
         font-size: 1.6rem;
         letter-spacing: 1.3px;
-        position: sticky;
-        top: 0;
-        z-index: 10;
       }
-
-      /* Page wrapper: center with max width ~900px */
-      .page-wrapper {
-        max-width: 900px;
-        margin: 3rem auto 5rem;
-        padding: 0 1rem;
-        box-sizing: border-box;
-      }
-
-      /* Main container flex: content + sidebar */
       main {
-        display: flex;
-        gap: 2.5rem;
-      }
-
-      /* Content area wider */
-      main > .content {
-        flex: 3 1 0;
-        min-width: 0; /* for text overflow */
-      }
-
-      /* Sidebar on right, narrower */
-      main > .sidebar {
-        flex: 1 1 250px;
-        max-width: 280px;
-        background: #e7f0fa;
+        max-width: 700px;
+        margin: 3rem auto 5rem;
+        background: white;
         border-radius: 12px;
-        padding: 1.5rem 2rem;
-        box-shadow: 0 4px 12px rgb(0 122 204 / 0.2);
-        max-height: calc(100vh - 8rem); /* leave space for header/footer */
-        overflow-y: auto;
-        font-size: 0.9rem;
-        line-height: 1.4;
-        position: sticky;
-        top: 6.5rem; /* below masthead */
+        box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
+        padding: 2.5rem 2rem;
+        text-align: center;
+        position: relative;
       }
-      .sidebar h3 {
-        color: #012a4a;
-        font-weight: 700;
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid #007acc;
-        padding-bottom: 0.3rem;
-      }
-      .sidebar ul {
-        list-style: none;
-        padding-left: 0;
-        margin-bottom: 2rem;
-      }
-      .sidebar ul li {
-        margin-bottom: 0.6rem;
-      }
-      .sidebar ul li a {
-        color: #007acc;
-        font-weight: 600;
-        text-decoration: none;
-        transition: color 0.25s ease;
-        word-break: break-word;
-      }
-      .sidebar ul li a:hover,
-      .sidebar ul li a:focus {
-        text-decoration: underline;
-        color: #005f99;
-        outline: none;
-      }
-
-      /* Profile pic and headings */
       .profile-pic {
         width: 140px;
         height: 140px;
@@ -105,13 +44,11 @@ layout: compress
         margin: 0 auto 1.8rem;
         border: 3px solid #007acc;
         box-shadow: 0 4px 10px rgba(0, 122, 204, 0.4);
-        display: block;
       }
       h1 {
         font-size: 2.4rem;
         color: #012a4a;
         margin-bottom: 0.2rem;
-        text-align: center;
       }
       h2 {
         font-weight: 400;
@@ -119,7 +56,6 @@ layout: compress
         margin: 0 0 1.8rem 0;
         font-size: 1.2rem;
         letter-spacing: 0.6px;
-        text-align: center;
       }
       p.intro {
         font-size: 1.1rem;
@@ -127,7 +63,6 @@ layout: compress
         color: #333;
         margin-bottom: 2.8rem;
         padding: 0 1rem;
-        text-align: center;
       }
       .btn-primary {
         background-color: #007acc;
@@ -141,8 +76,7 @@ layout: compress
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
         user-select: none;
-        display: block;
-        margin: 0 auto;
+        display: inline-block;
       }
       .btn-primary:hover,
       .btn-primary:focus {
@@ -181,19 +115,14 @@ layout: compress
         border-bottom: 1px solid #007acc;
         outline: none;
       }
-
-      /* Footer styling */
       footer {
-        max-width: 900px;
-        margin: 0 auto 3rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #555;
         padding: 2rem 1rem 1rem;
+        letter-spacing: 1.2px;
         border-top: 1px solid #ddd;
         background: #fff;
-        color: #555;
-        font-size: 0.9rem;
-        letter-spacing: 1.2px;
-        text-align: center;
-        box-sizing: border-box;
       }
       footer a {
         color: #007acc;
@@ -212,27 +141,7 @@ layout: compress
         font-weight: 700;
         color: #222;
       }
-
-      /* Responsive - stack content and sidebar vertically on smaller screens */
-      @media (max-width: 720px) {
-        .page-wrapper {
-          max-width: 95%;
-          margin: 2rem auto 3rem;
-          padding: 0 1rem;
-        }
-        main {
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-        main > .sidebar {
-          max-height: none;
-          position: relative;
-          top: auto;
-          max-width: 100%;
-          box-shadow: none;
-          border-radius: 8px;
-          padding: 1rem;
-        }
+      @media (max-width: 480px) {
         h1 {
           font-size: 2rem;
         }
@@ -256,80 +165,29 @@ layout: compress
       Dr. Farrukh Aziz
     </header>
 
-    <div class="page-wrapper">
-      <main>
-        <section class="content">
-          <img src="/assets/images/profile.jpg" alt="Dr. Farrukh Aziz" class="profile-pic" />
+    <main>
+      <img src="/assets/images/profile.jpg" alt="Dr. Farrukh Aziz" class="profile-pic" />
 
-          <h1>Dr. Farrukh Aziz</h1>
-          <h2>PhD Researcher | AI, Behavioral Science & Management Specialist</h2>
+      <h1>Dr. Farrukh Aziz</h1>
+      <h2>PhD Researcher | AI, Behavioral Science & Management Specialist</h2>
 
-          <p class="intro">
-            Welcome! I am a dedicated researcher at Dalian University of Technology, China, focusing on pioneering interdisciplinary studies where artificial intelligence meets organizational behavior and strategic management.<br /><br />
-            My mission is to leverage cutting-edge AI to unlock new insights in leadership effectiveness, lean manufacturing, and financial risk, enabling smarter decision-making and sustainable growth for industries worldwide.
-          </p>
+      <p class="intro">
+        Welcome! I am a dedicated researcher at Dalian University of Technology, China, focusing on pioneering interdisciplinary studies where artificial intelligence meets organizational behavior and strategic management.<br /><br />
+        My mission is to leverage cutting-edge AI to unlock new insights in leadership effectiveness, lean manufacturing, and financial risk, enabling smarter decision-making and sustainable growth for industries worldwide.
+      </p>
 
-          <button class="btn-primary" id="researchToggleBtn" aria-expanded="false" aria-controls="researchLinks">
-            Explore My Research & Publications
-          </button>
+      <button class="btn-primary" id="researchToggleBtn" aria-expanded="false" aria-controls="researchLinks">
+        Explore My Research & Publications
+      </button>
 
-          <nav class="dropdown-links" id="researchLinks" aria-label="Research and profile links" role="region">
-            <a href="/research-areas" target="_blank" rel="noopener noreferrer">Research Areas</a>
-            <a href="/publications" rel="noopener noreferrer">Research Publications</a>
-            <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-            <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer">ORCID Profile</a>
-          </nav>
-        </section>
-
-        <aside class="sidebar" aria-label="Sidebar with latest updates and links">
-          <section>
-            <h3>Latest Publications</h3>
-            <ul>
-              {% for pub in site.publications limit:5 %}
-                <li><a href="{{ pub.url | default: pub.path }}" title="{{ pub.title }}">{{ pub.title }}</a></li>
-              {% endfor %}
-            </ul>
-          </section>
-
-          <section>
-            <h3>Current Projects</h3>
-            <ul>
-              {% for proj in site.projects limit:5 %}
-                <li><a href="{{ proj.url | default: proj.path }}" title="{{ proj.title }}">{{ proj.title }}</a></li>
-              {% endfor %}
-            </ul>
-          </section>
-
-          <section>
-            <h3>Collaborators</h3>
-            <ul>
-              {% for collab in site.collaborators limit:5 %}
-                <li>{{ collab.name }}{% if collab.country %} ({{ collab.country }}){% endif %}</li>
-              {% endfor %}
-            </ul>
-          </section>
-
-          <section>
-            <h3>Supervisors</h3>
-            <ul>
-              {% for sup in site.supervisors limit:5 %}
-                <li>{{ sup.name }}{% if sup.country %} ({{ sup.country }}){% endif %}</li>
-              {% endfor %}
-            </ul>
-          </section>
-
-          <section>
-            <h3>News & Updates</h3>
-            <ul>
-              {% for news in site.news limit:5 %}
-                <li><a href="{{ news.url | default: news.path }}" title="{{ news.title }}">{{ news.title }}</a></li>
-              {% endfor %}
-            </ul>
-          </section>
-        </aside>
-      </main>
-    </div>
+      <nav class="dropdown-links" id="researchLinks" aria-label="Research and profile links" role="region">
+        <a href="/research-areas" target="_blank" rel="noopener noreferrer">Research Areas</a>
+        <a href="/publications" rel="noopener noreferrer">Research Publications</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=ulUkkPus9M0C" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Farrukh-Aziz-6" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+        <a href="https://orcid.org/0000-0001-7088-0371" target="_blank" rel="noopener noreferrer">ORCID Profile</a>
+      </nav>
+    </main>
 
     <footer>
       <span class="contact-email">engrfarrukhaziz@mail.dlut.edu.cn</span>
