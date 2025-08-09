@@ -9,6 +9,15 @@ permalink: /publications/
 <h1>Research Publications</h1>
 
 <article>
+  <h2>The Role of Incentive-Based Compensation in Enhancing Sales Team Motivation, Brand Expansion, and Profitability</h2>
+  <div class="authors-journal">
+    F Aziz, R.A Khoso, S Hussain, M Ashfaque<br />
+    Research Journal for Social Affairs, 3(5), 529-539, 2025<br />
+    <a href="https://doi.org/10.71317/RJSA.003.05.0347" target="_blank" rel="noopener noreferrer">https://doi.org/10.71317/RJSA.003.05.0347</a>
+  </div>
+</article>
+
+<article>
   <h2>How job stressors affect project-oriented OCB: An ego depletion perspective</h2>
   <div class="authors-journal">
     F Aziz, FA Shah, HM Shah<br />
@@ -24,6 +33,7 @@ permalink: /publications/
     Inverge Journal of Social Sciences 4 (3), 129-142, 2025
   </div>
   <a href="https://doi.org/10.63544/ijss.v4i3.153" target="_blank" class="btn-link" rel="noopener noreferrer">DOI</a>
+  <a href="https://www.researchgate.net/publication/394366080_The_Role_of_Artificial_Intelligence_in_Driving_ROI_through_Synergized_HR_Marketing_and_Financial_Decision-Making?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InByb2ZpbGUiLCJwYWdlIjoicHJvZmlsZSJ9fQ" target="_blank" class="btn-link" rel="noopener noreferrer">ResearchGate</a>
 </article>
 
 <article>
@@ -33,6 +43,7 @@ permalink: /publications/
     Journal of Management & Social Science 2 (3), 271-288, 2025
   </div>
   <a href="https://doi.org/10.63075/2at5qa32" target="_blank" class="btn-link" rel="noopener noreferrer">DOI</a>
+  <a href="https://www.researchgate.net/publication/394331619_The_Strategic_Role_of_Bitcoin_in_Asset_Allocation_Implications_for_Risk_Management_and_Long-Term_Investment_Performance?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InByb2ZpbGUiLCJwYWdlIjoicHJvZmlsZSJ9fQ" target="_blank" class="btn-link" rel="noopener noreferrer">ResearchGate</a>
 </article>
 
 <article>
@@ -41,6 +52,7 @@ permalink: /publications/
     FA Shah, A Ramzan, MF Aziz, F Aziz<br />
     International Journal of Advances in Engineering and Management (IJAEM), 2020
   </div>
+  <a href="https://www.researchgate.net/publication/394407431_Lean_Assessment_of_Manufacturing_Setup_Case_Study_Heavy_Mechanical_Complex_Hydraulic_shop_Pakistan" target="_blank" class="btn-link" rel="noopener noreferrer">ResearchGate</a>
 </article>
 
 <article>
@@ -102,6 +114,7 @@ permalink: /publications/
     display: inline-block;
     padding: 0.5em 1.2em;
     margin-top: 0.2rem;
+    margin-right: 0.5rem;
     background-color: #007acc;
     color: white;
     font-weight: 600;
