@@ -85,6 +85,14 @@ permalink: /publications/
   </div>
   <a href="https://www.researchgate.net/publication/394407274_AN_INTEGRATED_MODEL_FOR_FORECASTING_COTTON_PRODUCTION_DOMESTIC_CONSUMPTION_GROWTH_RATE_AREA_HARVESTED_EXPORTS_AND_IMPORTS_IN_PAKISTAN_UP_TO_2050" target="_blank" class="btn-link" rel="noopener noreferrer">Download</a>
 </article>
+<article>
+  <h2>AI, Automation, and the Future of Employment: Economic Consequences for Wages, Job Displacement, and Workforce Transformation</h2>
+  <div class="authors-journal">
+    FAziz, A Ali, R Arshad, Saleema, M Aziz<br />
+    ACADEMIA International Journal for Social Sciences, 4(3), 3165-3183, 2025
+  </div>
+  <a href="https://doi.org/10.63056/ACAD.004.03.0601" target="_blank" class="btn-link" rel="noopener noreferrer">DOI</a>
+</article>
 
 <article>
   <h2>Influence of glass fibers on mechanical properties of self-compacted concrete</h2>
